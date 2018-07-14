@@ -17,7 +17,8 @@ const AppWrapper = styled.div`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-image: url(${background});
+  background: darkslategray;
+  // background-image: url(${background});
   background-size: 100% 100%;
 `;
 

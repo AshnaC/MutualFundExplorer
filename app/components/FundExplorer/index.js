@@ -20,6 +20,7 @@ import {
   SpinnerContainer,  
   ContentContainer,
   ContentWrapper,
+  SearchLoader,
   CompareItem,
   SearchItem,
   FundName,
@@ -96,7 +97,7 @@ class FundExplorer extends React.Component {
 
   handleSearch(event) {
     const value = event.target.value;
-    if (value && value.length > 2 && value !== this.state.value) {
+    if (value && value !== this.state.searchParam) {
       this.searchFunds(value);
     }
     // to handle 3 char when same data is entered after dropdown disabled
@@ -149,7 +150,13 @@ class FundExplorer extends React.Component {
         <SpinnerContainer><LoadingIndicator /></SpinnerContainer>}
         <ContentWrapper>
           <SearchInputWrapper>
-            <Input large onKeyUp={this.handleSearch} onClick ={this.onInputClick}/>
+            <Input 
+              placeholder="Search..." 
+              onKeyUp={this.handleSearch} 
+              onClick ={this.onInputClick}/>
+            <SearchLoader>
+              {this.props.fetchingFundList && <LoadingIndicator />}
+            </SearchLoader>
             {funds && this.state.showSearchDropDown &&
               <SearchResultDropDown>
                 <BackDrop onClick={this.disableSearchDropDown} />

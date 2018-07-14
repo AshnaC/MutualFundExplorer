@@ -28,11 +28,14 @@ export const Input = styled.input`
   font-size: 14px;
   color: #666;
   font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
 `;
 
 export const SearchInputWrapper = styled.div`
   position: relative;
-  width: 470px;
+  width: 560px;
   margin: auto;
   text-align: center;
   padding: 50px 0;
@@ -137,4 +140,10 @@ top : 0;
 z-index: 5;
 padding-left: 50%;
 padding-top: 25%
+`;
+
+export const SearchLoader = styled.div`
+  display: inline-block;
+  vertical-align: middle;
+  width: 50px;
 `;

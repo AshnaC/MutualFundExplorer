@@ -21,11 +21,13 @@ const initialState = fromJS({
 function fundContainerReducer(state = initialState, action) {
   switch (action.type) {
     case GET_FUND_LIST:
-      return state.set('fundListFetched', false);
+      return state.set('fundListFetched', false)
+        .set('fetchingFundList', true);
     case LOADING_FAILED:
       return state.set('error', true);
     case FUND_LIST_FETCHED:
       return state.set('fundList', action.fundList.data)
+        .set('fetchingFundList', false)
         .set('fundListFetched', true);
     case FUND_DETAILS_FETCHED: {
       const { details } = action;

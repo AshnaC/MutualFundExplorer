@@ -32,6 +32,7 @@ export class FundContainer extends React.Component {
         getFundDetails={this.props.getFundDetails}
         fecthingDetails={this.props.fecthingDetails}
         fundListFetched={this.props.fundListFetched}
+        fetchingFundList ={this.props.fetchingFundList}
         getFundDetailsList={this.props.getFundDetailsList}
         fundDetailsList={this.props.fundDetailsList || {}}
       />
@@ -45,6 +46,7 @@ FundContainer.propTypes = {
   loadCompare: PropTypes.bool,
   fundListFetched: PropTypes.bool,
   fecthingDetails: PropTypes.bool,
+  fetchingFundList: PropTypes.bool,  
   fundDetailsList: PropTypes.object,
   getFundDetailsList: PropTypes.func,
   getFundList: PropTypes.func.isRequired,  
