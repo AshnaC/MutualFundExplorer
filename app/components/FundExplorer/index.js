@@ -155,7 +155,7 @@ class FundExplorer extends React.Component {
               onKeyUp={this.handleSearch} 
               onClick ={this.onInputClick}/>
             <SearchLoader>
-              {this.props.fetchingFundList || true && <LoadingIndicator />}
+              {this.props.fetchingFundList && <LoadingIndicator />}
             </SearchLoader>
             {funds && this.state.showSearchDropDown &&
               <SearchResultDropDown>
