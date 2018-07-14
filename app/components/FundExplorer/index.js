@@ -97,7 +97,7 @@ class FundExplorer extends React.Component {
 
   handleSearch(event) {
     const value = event.target.value;
-    if (value && value !== this.state.searchParam) {
+    if (value && value.length > 2 && value !== this.state.searchParam) {
       this.searchFunds(value);
     }
     // to handle 3 char when same data is entered after dropdown disabled
@@ -155,7 +155,7 @@ class FundExplorer extends React.Component {
               onKeyUp={this.handleSearch} 
               onClick ={this.onInputClick}/>
             <SearchLoader>
-              {this.props.fetchingFundList && <LoadingIndicator />}
+              {this.props.fetchingFundList || true && <LoadingIndicator />}
             </SearchLoader>
             {funds && this.state.showSearchDropDown &&
               <SearchResultDropDown>

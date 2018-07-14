@@ -15,7 +15,6 @@ import {
 } from './constants';
 
 const initialState = fromJS({
-  // fundDetailsList: {},
 });
 
 function fundContainerReducer(state = initialState, action) {
