@@ -1,15 +1,15 @@
 /**
-*
-* FundList
-*
-*/
+ *
+ * FundList
+ *
+ */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import StarRatingComponent from 'react-star-rating-component';
+import React from "react";
+import PropTypes from "prop-types";
+import StarRatingComponent from "react-star-rating-component";
 
-import FundDetails from '../FundDetails';
-import addToCompare from '../../images/addToCompare.jpg';
+import FundDetails from "../FundDetails";
+import addToCompare from "../../images/addToCompare.jpg";
 
 import {
   AddToCompareIcon,
@@ -18,17 +18,16 @@ import {
   ListItem,
   FundInfo,
   FundName,
-} from './styles';
+} from "./styles";
 
 class FundList extends React.PureComponent {
-
   getFundDetails = (detailsId) => () => {
     this.props.getFundDetails(detailsId);
   };
 
   addToCompare = (fund) => () => {
     this.props.addToCompare(fund);
-  }
+  };
 
   render() {
     return (
@@ -44,15 +43,23 @@ class FundList extends React.PureComponent {
                   <StarRatingComponent
                     name="rate"
                     starCount={5}
-                    editing={false}                    
-                    value={fund.rating} />
+                    editing={false}
+                    value={fund.rating}
+                  />
                 </RatingContainer>
-                <AddToCompareIcon src={addToCompare} onClick={this.addToCompare(fund)} />
+                <AddToCompareIcon
+                  src={addToCompare}
+                  onClick={this.addToCompare(fund)}
+                  title="Add to Compare"
+                />
               </FundInfo>
-              {this.props.selectedFundId === fund.details_id && this.props.fundDetailsList[fund.details_id] &&
-                <FundDetails
-                  fund={fund} 
-                  details={this.props.fundDetailsList[fund.details_id]} />}
+              {this.props.selectedFundId === fund.details_id &&
+                this.props.fundDetailsList[fund.details_id] && (
+                  <FundDetails
+                    fund={fund}
+                    details={this.props.fundDetailsList[fund.details_id]}
+                  />
+                )}
             </ListItem>
           );
         })}

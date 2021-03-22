@@ -4,11 +4,11 @@
  *
  */
 
-import React from 'react';
-import styled from 'styled-components';
-import { Switch, Route } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import { Switch, Route } from "react-router-dom";
 
-import FundContainer from '../FundContainer';
+import FundContainer from "../FundContainer";
 
 const AppWrapper = styled.div`
   min-width: 800px;
@@ -16,7 +16,7 @@ const AppWrapper = styled.div`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background: darkslategray;
+  // background: darkslategray;
 `;
 
 export default function App() {
